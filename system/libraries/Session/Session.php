@@ -279,10 +279,7 @@ class CI_Session {
 		else
 		{
 			ini_set('session.name', $params['cookie_name']);
-<<<<<<< HEAD
-=======
 			//ini_set('session.id', $params['cookie_name']);
->>>>>>> 31a25040bc4d7ef5a7e23b516a4a5c42437aa0c2
 		}
 
 		isset($params['cookie_path']) OR $params['cookie_path'] = config_item('cookie_path');
