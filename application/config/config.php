@@ -23,14 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-$config['base_url'] = '';
-=======
+
 
 //$config['base_url'] = 'http://groupe24.alwaysdata.net/PROJET36H-g24/';
 $config['base_url'] = 'http://localhost/PROJET36H-g24-TEST/';
 
->>>>>>> 31a25040bc4d7ef5a7e23b516a4a5c42437aa0c2
 
 /*
 |--------------------------------------------------------------------------
@@ -377,11 +374,9 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-<<<<<<< HEAD
-$config['sess_save_path'] = NULL;
-=======
+
 $config['sess_save_path'] = NULL; //FCPATH.'ci_sessions'
->>>>>>> 31a25040bc4d7ef5a7e23b516a4a5c42437aa0c2
+
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
@@ -522,7 +517,3 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-<<<<<<< HEAD
-=======
-
->>>>>>> 31a25040bc4d7ef5a7e23b516a4a5c42437aa0c2
