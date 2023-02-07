@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/PROJET36H-g24-TEST/';
+//$config['base_url'] = 'http://groupe24.alwaysdata.net/PROJET36H-g24/';
 
 /*
 |--------------------------------------------------------------------------
