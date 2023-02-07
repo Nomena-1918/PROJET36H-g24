@@ -4,9 +4,10 @@
 
 ?>
 
-        <footer>
-
-        
+        <footer class="bg-light py-3">
+            <div class="container text-center">
+                <p class="text-muted">Nomena 1918 &nbsp; &nbsp; &bull; &nbsp; &nbsp; Renato 1830</p>
+            </div>
         </footer>
 
     </body>
