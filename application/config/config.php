@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://groupe24.alwaysdata.net/PROJET36H-g24/';
+//$config['base_url'] = 'http://groupe24.alwaysdata.net/PROJET36H-g24/';
+$config['base_url'] = 'http://localhost/PROJET36H-g24-TEST/';
+
 
 /*
 |--------------------------------------------------------------------------
