@@ -19,33 +19,31 @@
         ?>
 -->  
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">TAKALO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item px-4">
-        <a class="nav-link" href="<?php echo site_url('#'); ?>">Mes objets</a>
-      </li>
-      <li class="nav-item px-4">
-        <a class="nav-link" href="<?php echo site_url('#'); ?>">Tous les objets</a>
-      </li>
-      <li class="nav-item px-4">
-        <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions envoyées</a>
-      </li>
-      <li class="nav-item px-4">
-        <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions reçues</a>
-      </li>
-      <li class="nav-item px-4">
-        <a class="nav-link" href="<?php echo site_url('#'); ?>">Déconnexion</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">TAKALO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Mes objets</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Tous les objets</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions envoyées</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions reçues</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Déconnexion</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
 
     </header>
 
