@@ -1,6 +1,6 @@
 <?php
 
 phpinfo();
-echo "Tsostotrement !!!!";
+echo "Tsotsotrement !!!!";
 
 ?>
