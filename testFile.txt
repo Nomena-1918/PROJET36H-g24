@@ -1,10 +1,1 @@
-Simple texte pour tester le dépot distant avec Alwaysdata
-
-
-MODIFFFFFFFFF
-
-
-farany
-
-
-Dernier bout de texte
+Test final avant examen
