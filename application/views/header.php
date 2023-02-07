@@ -15,7 +15,7 @@
 <body>
     <header>
 <!--    <?php
-        echo "Je suis un header";
+//        echo "Je suis un header";
         ?>
 -->    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
