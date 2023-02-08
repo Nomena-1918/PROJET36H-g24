@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Traitement extends CI_Controller {
 
+    // fonctions d'affichage des objets
+    public function listeLeursObjets(){
+        $this->load->view('objets/vueLeursObjets');
+    }
+    public function listeMesObjets(){
+        $this->load->view('objets/vueMesObjets');
+    }
+    
+
     public function ajouterobjet(){
        
         $all['categorie'] = $this->fonction->selecting('categorie');

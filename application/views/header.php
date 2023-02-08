@@ -14,10 +14,6 @@
 </head>
 <body>
     <header style="margin-bottom: 20px">
-<!--    <?php
-//        echo "Je suis un header";
-        ?>
--->  
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">TAKALO</a>
@@ -27,10 +23,10 @@
             <div class="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('index.php/ControleurObjets'); ?>">Mes objets</a>
+                    <a class="nav-link" href="<?php echo site_url('index.php/Traitement/listeMesObjets'); ?>">Mes objets</a>
                 </li>
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('index.php/ControleurObjets/listeLeursObjets'); ?>">Tous les objets</a>
+                    <a class="nav-link" href="<?php echo site_url('index.php/Traitement/listeLeursObjets'); ?>">Tous les objets</a>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions envoyées</a>
