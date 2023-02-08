@@ -8,7 +8,7 @@
             <?php } ?>
 
             <form action="<?php echo site_url('ControleurLogAdmin/traitementlogin'); ?>" method="post">
-                <p><input type="email" name="mail" Value="nousm@gmailcom"></p>
+                <p><input type="email" name="mail" Value="nousm@gmail.com"></p>
                 <p><input type="password" name="mdp" Value="mdp1"></p>
                 <p><input type="submit" value="connexion"></p>
             </form>
