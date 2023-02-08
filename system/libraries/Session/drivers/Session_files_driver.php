@@ -85,6 +85,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	void
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function __construct(&$params)
 	{
 		parent::__construct($params);
@@ -112,6 +113,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function open($save_path, $name)
 	{
 		if ( ! is_dir($save_path))
@@ -145,6 +147,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	string	Serialized session data
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function read($session_id)
 	{
 		// This might seem weird, but PHP 5.6 introduces session_reset(),
@@ -224,6 +227,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function write($session_id, $session_data)
 	{
 		// If the two IDs don't match, we have a session_regenerate_id() call
@@ -282,6 +286,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function close()
 	{
 		if (is_resource($this->_file_handle))
@@ -306,6 +311,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function destroy($session_id)
 	{
 		if ($this->close() === $this->_success)
@@ -348,6 +354,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 
+	#[\ReturnTypeWillchange]
 	public function gc($maxlifetime)
 	{
 		if ( ! is_dir($this->_config['save_path']) OR ($directory = opendir($this->_config['save_path'])) === FALSE)
