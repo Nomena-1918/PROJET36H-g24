@@ -110,7 +110,7 @@ class Traitement extends CI_Controller {
 	}
 
     function mespropositions(){
-        $haha
+        $haha = $this->
     }
 
     public function traitementdeleteobject(){
