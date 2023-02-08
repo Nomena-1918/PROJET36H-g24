@@ -17,7 +17,6 @@
             <th>Description</th>
             <th>Prix</th>
             <th>Action</th>
-            
         </tr>       
         
     <?php for ($i=0; $i <count($objets) ; $i++) { ?>

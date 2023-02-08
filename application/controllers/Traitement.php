@@ -109,6 +109,10 @@ class Traitement extends CI_Controller {
         }
 	}
 
+    function mespropositions(){
+        $haha
+    }
+
     public function traitementdeleteobject(){
         $id = $this->input->get('idobjet');
         $sql = sprintf("idobjet1=%s || idobjet2=%s", $id, $id);
