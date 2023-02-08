@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Mes objets</a>
+                    <a class="nav-link" href="<?php echo site_url('traitement/'); ?>">Mes objets</a>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="<?php echo site_url('#'); ?>">Tous les objets</a>
