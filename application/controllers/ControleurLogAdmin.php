@@ -9,10 +9,15 @@ class ControleurLogAdmin extends CI_Controller
 		$this->load->view('LogAdmin/vueLogAdmin');
 	}
 
-	public function inscription()
+	public function formConnexionClient()
+	{
+		//redirect('ControleurLogClient');
+		$this->load->view('LogClient/vueLogClient');
+	}
+	public function formInscription()
 	{
 		// redirect('inscription');
-		$this->load->view('inscription');
+		$this->load->view('inscription/inscription');
 	}
 
 	public function traitementlogin()
