@@ -30,31 +30,29 @@
             </div>
         </nav>
 
-        <h2>Gestion des objets de autree utilisateurs</h2>
+        <h2>Les Categories</h2>
 
-    <div id="main">
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Photo</th>
-            <th>Titre</th>
-            <th>proprietaire</th>
-        </tr>       
-        
-    <?php for ($i=0; $i <count($objets) ; $i++) { ?>
-        <tr><a href=""></a>
-            <td><?php echo $objets[$i]['idobjet'];?></td>
-            <td><?php echo $objets[$i]['nomobjet'];?></td>
-            <td><?php echo $objets[$i]['nomobjet'];?></td>
-            <td><a href="<?php echo site_url("traitement/detailobjet?idobjet=".$objets[$i]['idobjet']); ?>">details</a></td>
-            <td><a href="">modifier</a></td>
-            <td><a href="">supprimer</a></td>            
-        </tr>
-    <?php } ?>
-    </table>
-</div> 
-     </div>
+    <p><a href="<?php echo site_url('traitement/ajoutercategorie'); ?>">Nouvelle categorie</a></p>
+
+        <div id="main">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nom Categorie</th>
+            </tr>       
+            
+        <?php for ($i=0; $i <count($categorie) ; $i++) { ?>
+            <tr>
+                <td><?php echo $categorie[$i]['idcategorie'];?></td>
+                <td><?php echo $categorie[$i]['nomcategorie'];?></td>
+                <td><a href="">modifier</a></td>
+                <td><a href="">supprimer</a></td>
+            </tr>
+        <?php } ?>
+        </table>
+    </div> 
     </center>
+        
 
     <script src="../assets/bootstrap-3.3.6-dist/js/jquery.min.js"></script>
     <script src="../assets/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>

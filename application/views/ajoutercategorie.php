@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap-3.3.6-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/bootstrap-3.3.6-dist/css/css.css">
-    <title>Acceuil</title>
+    <title>Ajouter Categorie</title>
 </head>
 <body>
     <center>
-        <!-- header -->
-        <nav style="display: inline-flex;" >
+         <!-- header -->
+         <nav style="display: inline-flex;" >
             <div><a href="<?php echo site_url('traitement/acceuil'); ?>">Acceuil</a></div>
             <div><a href="">Echange</a></div>
             <div><a href="">Demandes</a></div>
@@ -30,30 +30,19 @@
             </div>
         </nav>
 
-        <h2>Gestion des objets de autree utilisateurs</h2>
 
-    <div id="main">
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Photo</th>
-            <th>Titre</th>
-            <th>proprietaire</th>
-        </tr>       
-        
-    <?php for ($i=0; $i <count($objets) ; $i++) { ?>
-        <tr><a href=""></a>
-            <td><?php echo $objets[$i]['idobjet'];?></td>
-            <td><?php echo $objets[$i]['nomobjet'];?></td>
-            <td><?php echo $objets[$i]['nomobjet'];?></td>
-            <td><a href="<?php echo site_url("traitement/detailobjet?idobjet=".$objets[$i]['idobjet']); ?>">details</a></td>
-            <td><a href="">modifier</a></td>
-            <td><a href="">supprimer</a></td>            
-        </tr>
-    <?php } ?>
-    </table>
-</div> 
-     </div>
+        <h2>Ajouter un Categorie</h2>
+
+        <?php if(isset($error)){ ?>
+            <p style="color:red;"><?php echo $error ?></p>
+        <?php } ?>
+
+        <form action="<?php echo site_url('traitement/traitementajoutcategorie'); ?>" method="post">
+            <p><input type="text" name="nomcategorie" placeholder="Nom du categorie"></p>
+            <p><input type="submit" values="Ajouter"></p>
+        </form>
+       
+        <p> <a href="<?php echo site_url('traitement/categorie'); ?>">Retour liste categorie</a></p>
     </center>
 
     <script src="../assets/bootstrap-3.3.6-dist/js/jquery.min.js"></script>

@@ -3,14 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Traitement extends CI_Controller {
 
-    public function deconnexion(){
-        // unset($_SESSION['utilisateur']);
-        
-        $this->session->unset_userdata('utilisateur');
-        redirect('ControleurLogAdmin/index');
-    }
-
-
     public function ajouterobjet(){
        
         $all['categorie'] = $this->fonction->selecting('categorie');
@@ -29,8 +21,10 @@ class Traitement extends CI_Controller {
         $this->load->view('categorie', $all);
     }
 
-    public function acceuil(){     
-        $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
+    public function acceuil(){
+       
+
+        $all['objets'] =  $this->fonction->selecting_view('mesobjet');
         $this->load->view('acceuil', $all);
     }
 
@@ -47,8 +41,9 @@ class Traitement extends CI_Controller {
     }
 
     public function listeobjetautre(){
-        $sql = sprintf("idutilisateur!=%s", $_SESSION['utilisateur']['idutilisateur']);
-        $send['objets'] = $this->fonction->selecting_view_specified('mesobjet', $sql);
+       
+
+        $send['objets'] =  $objet= $this->fonction->selecting_view('autreobjet');
         $this->load->view('listeobjetautre', $send);
     }
 
@@ -63,15 +58,13 @@ class Traitement extends CI_Controller {
         $description = $this->input->post('description');
 
         $all['categorie'] = $this->fonction->selecting('categorie');
-
+        $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
         
 
         if($nom=="" || $categorie=="" || $prix=="" || $description==""){
-        $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
             $all['error'] = "Les Champs ne doivent pas etre vide";
             $this->load->view('ajouterobjet', $all);
-        }
-        else{
+        }else{
             $values = sprintf("(default, '%s', '%s', '%s', '%s')", $nom,  $description, $categorie, $prix);
             $this->fonction->inserting("objet", $values);
             $objet = $this->fonction->selecting('objet');
@@ -81,8 +74,6 @@ class Traitement extends CI_Controller {
 
             $values = sprintf("(NULL, %s, %s, default, 0)", $idutilisateur, $objet[$len-1]['idobjet']);
             $this->fonction->inserting("objetutilisateur", $values);
-
-            $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
 
             $this->load->view('acceuil', $all);
         }
@@ -109,23 +100,14 @@ class Traitement extends CI_Controller {
         }
 	}
 
-    function mespropositions(){
-        $haha
-    }
-
     public function traitementdeleteobject(){
+       
+
         $id = $this->input->get('idobjet');
-        $sql = sprintf("idobjet1=%s || idobjet2=%s", $id, $id);
-        $this->fonction->deleting('echange', $sql);
-
         $sql = sprintf("idobjet=%s", $id);
-        $this->fonction->deleting('objetutilisateur', $sql);
-
-        $sql = sprintf("idobjet=%s", $id);
-        $this->fonction->deleting('objet', $sql);
-
-        $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
-        $this->load->view('acceuil', $all);
+        $this->fonction->deleting("objet", $sql);
+        
+        $this->load->view('acceuil');
     }
 
     //CATEGORIE
