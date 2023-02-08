@@ -29,9 +29,8 @@ class ControleurLogAdmin extends CI_Controller {
 		}else{
 			$this->load->library('session');
 			$condition = sprintf("mail='%s' and mdp='%s'", $mail, $mdp);
-			$user = $this->fonction->selecting('utilisateur');
-			$len = count($user);
-			$_SESSION['utilisateur'] = $user[$len-1];
+			$user = $this->fonction->selecting_specified('utilisateur', "mail='".$mail."' and mdp='".$mdp."'");
+			$_SESSION['utilisateur'] = $user[0];
 
 			$sql = sprintf('idutilisateur=%s', $_SESSION['utilisateur']['idutilisateur']);
 			$all['objets'] = $this->fonction->selecting_view_specified('mesobjet', $sql);

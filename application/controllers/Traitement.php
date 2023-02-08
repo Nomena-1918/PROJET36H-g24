@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Traitement extends CI_Controller {
 
     public function deconnexion(){
-        unset($_SESSION['utilisateur']);
+        // unset($_SESSION['utilisateur']);
+        
+        $this->session->unset_userdata('utilisateur');
         redirect('ControleurLogAdmin/index');
     }
 
@@ -108,13 +110,18 @@ class Traitement extends CI_Controller {
 	}
 
     public function traitementdeleteobject(){
-       
-
         $id = $this->input->get('idobjet');
+        $sql = sprintf("idobjet1=%s || idobjet2=%s", $id, $id);
+        $this->fonction->deleting('echange', $sql);
+
         $sql = sprintf("idobjet=%s", $id);
-        $this->fonction->deleting("objet", $sql);
-        
-        $this->load->view('acceuil');
+        $this->fonction->deleting('objetutilisateur', $sql);
+
+        $sql = sprintf("idobjet=%s", $id);
+        $this->fonction->deleting('objet', $sql);
+
+        $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
+        $this->load->view('acceuil', $all);
     }
 
     //CATEGORIE
