@@ -22,8 +22,7 @@
             <td><?php echo $objets[$i]['idobjet'];?></td>
             <td><?php echo $objets[$i]['titre'];?></td>          
             <td><?php echo $objets[$i]['description'];?></td>
-            <td><?php echo $objets[$i]['prix'];?></td>
-            <td><a href="<?php echo site_url("traitement/traitementdeleteobject?idobjet=".$objets[$i]['idobjet']); ?>">supprimer</a></td>           
+            <td><?php echo $objets[$i]['prix'];?></td>           
         </tr>
     <?php } ?>
     </table>
