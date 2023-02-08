@@ -14,10 +14,6 @@
 </head>
 <body>
     <header>
-<!--    <?php
-//        echo "Je suis un header";
-        ?>
--->  
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">TAKALO</a>
@@ -27,19 +23,19 @@
             <div class="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="">Mes objets</a>
+                    <a class="nav-link" href="<?php echo site_url('traitement/acceuil'); ?>">Mes objets</a>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="<?php echo site_url('traitement/listeobjetautre'); ?>">Tous les objets</a>
                 </li>
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions envoyées</a>
+                    <a class="nav-link" href="<?php echo site_url(''); ?>">Propositions envoyées</a>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions reçues</a>
                 </li>
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Déconnexion</a>
+                    <a class="nav-link" href="<?php echo site_url('traitement/deconnexion'); ?>">Déconnexion</a>
                 </li>
                 </ul>
             </div>

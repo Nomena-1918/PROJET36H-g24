@@ -21,7 +21,6 @@
             <td><?php //echo $objets[$i]['titre'];?> inserer photo ici</td>
             <td><?php echo $objets[$i]['titre'];?></td>
             <td><a href="">details</a></td>
-            <td><a href="">modifier</a></td>
             <td><a href="">supprimer</a></td>            
         </tr>
     <?php } ?>
