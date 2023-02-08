@@ -1,3 +1,5 @@
+--Database Takalo
+
 create table utilisateur(
     idutilisateur int primary key auto_increment,
     nomutilisateur varchar(30),
