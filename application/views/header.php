@@ -29,10 +29,10 @@
                     <a class="nav-link" href="<?php echo site_url('traitement/listeobjetautre'); ?>">Tous les objets</a>
                 </li>
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url(''); ?>">Propositions envoyées</a>
+                    <a class="nav-link" >Propositions envoyées</a>
                 </li>
                 <li class="nav-item px-4">
-                    <a class="nav-link" href="<?php echo site_url('#'); ?>">Propositions reçues</a>
+                    <a class="nav-link" s>Propositions reçues</a>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="<?php echo site_url('traitement/deconnexion'); ?>">Déconnexion</a>
