@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'takalo',
+	'hostname' => 'mysql-groupe24.alwaysdata.net',
+	'username' => 'groupe24',
+	'password' => 'root@123!',
+	'database' => 'groupe24_takalo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
