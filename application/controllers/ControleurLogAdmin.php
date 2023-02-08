@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ControleurLogAdmin extends CI_Controller {
 
 	public function index(){
-		$this->load->view("LogAdmin/vueLogAdmin");
+		$this->load->view("LogClient/vueLogClient");
 	}
 
 	public function formConnexionClient()
@@ -34,7 +34,7 @@ class ControleurLogAdmin extends CI_Controller {
 
 		if($existe==false){
 			$a['error'] = 'Ce compte n exite pas. Veuiller creer un compte';
-			$this->load->view('login', $a);
+			$this->load->view('LogClient/vueLogclient', $a);
 		}else{
 			$this->load->library('session');
 			$condition = sprintf("mail='%s' and mdp='%s'", $mail, $mdp);
@@ -43,7 +43,8 @@ class ControleurLogAdmin extends CI_Controller {
 
 			$sql = sprintf('idutilisateur=%s', $_SESSION['utilisateur']['idutilisateur']);
 			$all['objets'] = $this->fonction->selecting_view_specified('mesobjet', $sql);
-			$this->load->view('acceuil', $all);
+				$this->redirect('Traitement/listeMesObjets');
+			//$this->load->view('acceuil', $all);
 			}
 		}
 	}

@@ -13,10 +13,11 @@ class Traitement extends CI_Controller {
 
     // fonctions d'affichage des objets
     public function listeLeursObjets(){
+
         $this->load->view('objets/vueLeursObjets');
     }
     public function listeMesObjets(){
-        $this->load->view('objets/vueMesObjets');
+        $this->accueil();
     }
 
     public function ajouterobjet(){
@@ -40,7 +41,8 @@ class Traitement extends CI_Controller {
 
     public function acceuil(){     
         $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
-        $this->load->view('acceuil', $all);
+        $this->load->view('objets/vueMesObjets');
+        //$this->load->view('acceuil', $all);
     }
 
     public function detailobjet(){
@@ -58,7 +60,7 @@ class Traitement extends CI_Controller {
     public function listeobjetautre(){
         $sql = sprintf("idutilisateur!=%s", $_SESSION['utilisateur']['idutilisateur']);
         $send['objets'] = $this->fonction->selecting_view_specified('mesobjet', $sql);
-        $this->load->view('listeobjetautre', $send);
+        //$this->load->view('listeobjetautre', $send);
     }
 
     //OBJET
