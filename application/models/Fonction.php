@@ -58,8 +58,8 @@ class Fonction extends CI_Model {
     }
     
     function inserting($table, $values){
-       $sql = sprintf( 'insert into %s values%s',$table, $values);
-      $this->db->query($sql);
+       $sql = sprintf( 'insert into %s values %s',$table, $values);
+        $this->db->query($sql);
     }
 
     function deleting($table, $condition){
