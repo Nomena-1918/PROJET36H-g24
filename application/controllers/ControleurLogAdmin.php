@@ -4,11 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ControleurLogAdmin extends CI_Controller {
 
 	public function index(){
-		$this->load->view("login");
+		$this->load->view("LogAdmin/vueLogAdmin");
 	}
 
-	public function inscription(){
-		$this->load->view('inscription');
+	public function formConnexionClient()
+	{
+		//redirect('ControleurLogClient');
+		$this->load->view('LogClient/vueLogClient');
+	}
+
+	public function formInscription()
+	{
+		// redirect('inscription');
+		$this->load->view('inscription/inscription');
+
 	}
 
     public function traitementlogin(){

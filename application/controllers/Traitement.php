@@ -3,11 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Traitement extends CI_Controller {
 
+
     public function deconnexion(){
         unset($_SESSION['utilisateur']);
         redirect('ControleurLogAdmin/index');
     }
 
+    // fonctions d'affichage des objets
+    public function listeLeursObjets(){
+        $this->load->view('objets/vueLeursObjets');
+    }
+    public function listeMesObjets(){
+        $this->load->view('objets/vueMesObjets');
+    }
 
     public function ajouterobjet(){
        
@@ -26,6 +34,7 @@ class Traitement extends CI_Controller {
         $all['categorie'] =  $this->fonction->selecting('categorie');
         $this->load->view('categorie', $all);
     }
+
 
     public function acceuil(){     
         $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
@@ -60,9 +69,7 @@ class Traitement extends CI_Controller {
         $prix  = $this->input->post('prix');
         $description = $this->input->post('description');
 
-        $all['categorie'] = $this->fonction->selecting('categorie');
-
-        
+        $all['categorie'] = $this->fonction->selecting('categorie');        
 
         if($nom=="" || $categorie=="" || $prix=="" || $description==""){
         $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
@@ -70,6 +77,7 @@ class Traitement extends CI_Controller {
             $this->load->view('ajouterobjet', $all);
         }
         else{
+
             $values = sprintf("(default, '%s', '%s', '%s', '%s')", $nom,  $description, $categorie, $prix);
             $this->fonction->inserting("objet", $values);
             $objet = $this->fonction->selecting('objet');
@@ -79,9 +87,7 @@ class Traitement extends CI_Controller {
 
             $values = sprintf("(NULL, %s, %s, default, 0)", $idutilisateur, $objet[$len-1]['idobjet']);
             $this->fonction->inserting("objetutilisateur", $values);
-
             $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
-
             $this->load->view('acceuil', $all);
         }
 	}

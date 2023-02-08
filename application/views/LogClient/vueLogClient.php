@@ -1,14 +1,14 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     $this->load->view('header');
-?>  
+?>
     <div class="flex-column justify-content-center align-items-center">
         <?php
-            $this->load->view('LogAdmin/titreLogAdmin');
+            $this->load->view('LogClient/titreLogClient');
             $this->load->view('login');
-            $this->load->view('LogAdmin/specLogAdmin');
+            $this->load->view('LogClient/specLogClient');
         ?>
     </div>
-<?php    
+<?php  
     $this->load->view('footer');
 ?>
