@@ -66,14 +66,14 @@ class Traitement extends CI_Controller {
             $all['error'] = "Les Champs ne doivent pas etre vide";
             $this->load->view('ajouterobjet', $all);
         }else{
-            $values = sprintf("(default, '%s', '%s', '%s', '%s')", $nom,  $description, $categorie, $prix);
+            $values = sprintf("(default, '%s', '%s', %s, '%s')", $nom,  $description, $categorie, $prix);
             $this->fonction->inserting("objet", $values);
             $objet = $this->fonction->selecting('objet');
 			$len = count($objet);
 
             $idutilisateur =  $_SESSION['utilisateur']['idutilisateur'];
 
-            $values = sprintf("(NULL, %s, %s, default, 0)", $idutilisateur, $objet[$len-1]['idobjet']);
+            $values = sprintf("(default, %s, %s, default, 0)", $idutilisateur, $objet[$len-1]['idobjet']);
             $this->fonction->inserting("objetutilisateur", $values);
 
             $all['objets'] = $this->fonction->selecting_view_specified('mesobjet', 'idutilisateur='.$_SESSION['utilisateur']['idutilisateur']);
